@@ -50,6 +50,10 @@ if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE "RelWithDebInfo")
 endif()
 
+if(WIN32)
+	add_link_options("-municode")
+endif()
+
 # Include some common macros to simpilfy the Poco CMake files
 include(PocoMacros)
 

@@ -98,6 +98,9 @@
 #include "Poco/Platform.h"
 #if defined(_WIN32)
 	#include "Poco/Platform_WIN32.h"
+	#undef TIMESTAMP_REQUEST    
+	#undef TCHAR
+	static_assert(sizeof(wchar_t) == sizeof(short));
 #elif defined(POCO_VXWORKS)
 	#include "Poco/Platform_VX.h"
 #elif defined(POCO_OS_FAMILY_UNIX)
